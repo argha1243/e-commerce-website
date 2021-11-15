@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const mongoose1 = require('mongoose');
 require('dotenv').config()
 
 // app
@@ -8,7 +8,7 @@ const port =  process.env.port || 8000
 
 
 //db
-mongoose.connect(process.env.DATABASE, {
+mongoose1.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(()=>console.log('DB Connected'));
