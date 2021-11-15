@@ -1,16 +1,19 @@
 const express = require('express');
-const mongoose1 = require('mongoose');
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/user')
 require('dotenv').config()
 
 // app
 const app =express()
 const port =  process.env.port || 8000
 
+//routes middleware
+app.use(userRoutes);
 
 //db
-mongoose1.connect(process.env.DATABASE, {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useCreateIndex: true
+    //useCreateIndex: true
 }).then(()=>console.log('DB Connected'));
 
 // routes
