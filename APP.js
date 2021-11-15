@@ -8,7 +8,7 @@ const app =express()
 const port =  process.env.port || 8000
 
 //routes middleware
-app.use(userRoutes);
+app.use('/api',userRoutes);
 
 //db
 mongoose.connect(process.env.DATABASE, {
